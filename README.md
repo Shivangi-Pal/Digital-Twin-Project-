@@ -29,7 +29,7 @@ Renewable Capacity Addition
 
 Capacity Decommissioning Rate
 
-Converters & Parameters:
+# Converters & Parameters:
 
 Government incentives
 
