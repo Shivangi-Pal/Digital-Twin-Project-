@@ -11,7 +11,7 @@ G2: Assess the capability of renewable energy infrastructure to meet the new dem
 # Model Description
 The model is structured around key feedback loops that drive the dynamics of AV adoption and renewable energy expansion. The system includes:
 
-Stocks:
+## Stocks:
 
 Number of AVs
 
@@ -19,7 +19,7 @@ Installed Renewable Capacity
 
 Total Electricity Demand
 
-Flows:
+## Flows:
 
 AV Adoption Rate
 
