@@ -1,121 +1,124 @@
-# Digital Twin Model: Evaluating the Sustainability of Autonomous Vehicle Adoption
+# 🚗🔋 Digital Twin Model: Evaluating the Sustainability of Autonomous Vehicle Adoption
 
-This project presents a system dynamics digital twin model developed using Vensim PLE to analyze whether the increasing adoption of Autonomous Vehicles (AVs) is sustainable in terms of electricity consumption, renewable capacity, and lithium resource availability.
+This project presents a **system dynamics digital twin model** developed using **Vensim PLE** to analyze whether the increasing adoption of **Autonomous Vehicles (AVs)** is sustainable in terms of electricity consumption, renewable energy capacity, and lithium resource availability.
 
-## Problem Statement
-Autonomous Vehicles (AVs) are expected to transform transportation. However, the rapid adoption of AVs brings concerns over:
+---
 
-Increased electricity demand
+## 🎯 Problem Statement
 
-Lithium shortages for batteries
+Autonomous Vehicles (AVs) are poised to revolutionize transportation. However, their rapid adoption raises sustainability concerns:
+- ⚡ Surging electricity demand
+- 🔋 Lithium shortages for batteries
+- 🌿 Increased pressure on renewable infrastructure
 
-Pressure on renewable energy infrastructure
+> **Key Question**: *Is the mass adoption of AVs environmentally and infrastructurally sustainable over time?*
 
-This model addresses the question:
+---
 
-❓ Is the mass adoption of AVs environmentally and infrastructurally sustainable over time?
+## 🧠 GML Framework (Goals, Measures, Levers)
 
-## GML Framework (Goals, Measures, Levers)
+| Element      | Description                                                                 |
+|--------------|-----------------------------------------------------------------------------|
+| **Goals**    | Assess long-term sustainability of AV adoption across energy and resources |
+| **Measures** | No. of AVs, Electricity Demand, Installed Renewable Capacity, Shortage Ratio |
+| **Levers**   | Government Incentives, Charging Infrastructure, AV Tech Rate, Renewable Growth Rate |
 
-| Element     | Description                                                                 |
-|-------------|-----------------------------------------------------------------------------|
-| **Goals**   | Assess long-term sustainability of AV adoption across energy and resources |
-| **Measures**| No. of AVs, Electricity Demand, Installed Renewable Capacity, Shortage Ratio |
-| **Levers**  | Government Incentives, Charging Infrastructure, Renewable Growth Rate       |
+---
 
-## Model Architecture
-The model is divided into three subsystems:
-Each component interacts with feedback loops and external drivers.
+## 🧩 Model Subsystems
 
-### 1. AV Adoption Subsystem
-#### Stock: No. of AVs
+### 1. 🚘 AV Adoption Subsystem
 
-#### Flows: AV adoption rate, AV retirement rate
+| Component            | Role                                                              |
+|----------------------|-------------------------------------------------------------------|
+| `No. of AVs`         | Stock representing total AVs in use                               |
+| `AV adoption rate`   | Inflow driven by incentives, infrastructure, market share         |
+| `AV retirement rate` | Outflow based on average AV lifespan                              |
+| `Adoption saturation`| Caps growth due to resistance and market saturation               |
 
-#### Drivers:
+---
 
-AV attractiveness factor (affected by incentives, infrastructure, tech rate)
+### 2. ⚡ Electricity Demand & Renewable Capacity
 
-Market resistance
+| Component                         | Role                                                       |
+|----------------------------------|-------------------------------------------------------------|
+| `Electricity demand from AVs`    | Product of AV count and average energy usage               |
+| `Total electricity demand`       | Sum of AV and base electricity needs                       |
+| `Installed renewable capacity`   | Stock showing renewable infrastructure                     |
+| `Addition & decommission rates`  | Inflows/outflows based on investment and plant lifespan    |
+| `Renewable supply gap`           | Gap between electricity demand and renewable capacity      |
 
-Adoption saturation
+---
 
-#### Key Output: AV market share over time
+### 3. 🔋 Lithium Resource Dynamics
 
-### 2. Electricity Demand & Renewable Supply
-#### Stock: Installed renewable capacity
+| Component               | Role                                                          |
+|-------------------------|---------------------------------------------------------------|
+| `Annual lithium demand` | Driven by number of AVs × lithium per battery                 |
+| `Global lithium supply` | Input to simulate market limitation                           |
+| `Shortage ratio`        | Demand-to-supply ratio affecting future AV adoption           |
 
-#### Flows:
+---
 
-Renewable capacity addition rate
+## 🔁 Feedback Loops
 
-Renewable decommission rate
+| Loop Type       | Description                                                                 |
+|------------------|-----------------------------------------------------------------------------|
+| **Reinforcing (R1)** | More AVs → More electricity demand → More renewable investment → More capacity → Enables more AVs |
+| **Balancing (B1)**   | More AVs → Higher lithium demand → Shortage → Limits future adoption     |
+| **Balancing (B2)**   | Higher AV share → Market saturation/resistance → Slows new adoption     |
 
-#### Calculated Outputs:
+---
 
-Electricity demand from AVs
+## 📊 Simulation Insights
 
-Total electricity demand
+The model lets you explore scenarios such as:
+- How much **renewable energy growth** is needed to meet future electricity demand?
+- Can **policy incentives** speed up sustainable AV adoption?
+- At what point does **lithium shortage** impact the AV rollout?
 
-Renewable supply gap
+---
 
-#### Levers:
+## 🛠 Tools Used
 
-Effect of AVs on investment in renewables
+| Tool        | Purpose                             |
+|-------------|-------------------------------------|
+| Vensim PLE  | System dynamics modeling and simulation |
+| Stock & Flow Diagrams | Modeling feedback and delay structures |
+| Scenario Analysis | Exploring adoption, shortage, and supply dynamics |
 
-Base renewable growth rate
+---
 
-### 3. Lithium Resource Subsystem
-#### Computed Variables:
+## 📎 How to Use
 
-Annual lithium demand = AVs × lithium per battery
+1. Open the `.mdl` file using **Vensim PLE**.
+2. Modify levers such as:
+   - Government Incentive
+   - Charging Infrastructure
+   - Base Renewable Growth Rate
+3. Run simulations and analyze outputs such as:
+   - Number of AVs
+   - Electricity Demand
+   - Renewable Capacity
+   - Lithium Shortage Ratio
 
-Shortage ratio = Demand / Supply
+---
 
-#### Impacts:
+## 🚀 Future Extensions
 
-Lithium shortage can act as a braking feedback loop on AV production (optional modeling extension).
+| Feature                  | Purpose                                                              |
+|--------------------------|----------------------------------------------------------------------|
+| Battery recycling logic  | Model resource recovery from retired AVs                             |
+| Economic modeling        | Track carbon costs, policy costs, and electricity pricing            |
+| Grid capacity stress     | Evaluate impact on peak demand and blackout probabilities            |
+| Real-time dashboard      | Build Power BI dashboard to visualize simulation outcomes            |
 
-## Key Feedback Loops
+---
 
-Loop Type              	Description
+## 📌 License
 
-Reinforcing (R1)      	AV adoption → ↑ Electricity demand → ↑ Renewable investment → ↑ Installed capacity → Supports more AVs
+This project is developed for academic purposes as part of a system modeling course at **VNIT Nagpur**.
 
-Balancing (B1)        	↑ AVs → ↑ Lithium demand → Supply pressure → Shortage → ↓ AV production
+---
 
-Balancing (B2)        	↑ AV market share → Market resistance/adoption saturation → ↓ adoption rate
-
-## Simulation Insights (Sample Outcomes)
-What level of renewable energy growth is needed to keep pace with AV electricity demand?
-
-How does policy intervention (incentives or tech investment) affect sustainability?
-
-What is the tipping point where lithium shortages slow down adoption?
-
-## Tools & Techniques
-Software: Vensim PLE
-
-Modeling: Stock-flow diagrams, feedback loop analysis
-
-Approach: System dynamics and scenario-based simulation
-
-## How to Use
-Open the .mdl file in Vensim PLE.
-
-Modify variables like:
-
-Government Incentive
-
-Charging Infrastructure Sufficiency
-
-Base Renewable Growth Rate
-
-Run simulations to observe trends over time.
-
-## Future Enhancements
-Add economic cost models and carbon footprint analysis.
-
-Introduce policy levers: EV subsidies, battery recycling rates.
-
-Integrate grid reliability metrics and peak demand pressures.
+Let me know if you'd like help turning this into a live `README.md` file in your repo or if you want me to generate it as a downloadable file.
