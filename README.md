@@ -31,34 +31,34 @@ Autonomous Vehicles (AVs) are poised to revolutionize transportation. However, t
 
 | Component            | Role                                                              |
 |----------------------|-------------------------------------------------------------------|
-| `No. of AVs`         | Stock representing total AVs in use                               |
-| `AV adoption rate`   | Inflow driven by incentives, infrastructure, market share         |
-| `AV retirement rate` | Outflow based on average AV lifespan                              |
-| `Adoption saturation`| Caps growth due to resistance and market saturation               |
+| **No. of AVs**         | Stock representing total AVs in use                               |
+| **AV adoption rate**   | Inflow driven by incentives, infrastructure, market share         |
+| **AV retirement rate** | Outflow based on average AV lifespan                              |
+| **Adoption saturation**| Caps growth due to resistance and market saturation               |
 
----
+
 
 ### 2.  Electricity Demand & Renewable Capacity
 
 | Component                         | Role                                                       |
 |----------------------------------|-------------------------------------------------------------|
-| `Electricity demand from AVs`    | Product of AV count and average energy usage               |
-| `Total electricity demand`       | Sum of AV and base electricity needs                       |
-| `Installed renewable capacity`   | Stock showing renewable infrastructure                     |
-| `Addition & decommission rates`  | Inflows/outflows based on investment and plant lifespan    |
-| `Renewable supply gap`           | Gap between electricity demand and renewable capacity      |
+| **Electricity demand from AVs**    | Product of AV count and average energy usage               |
+| **Total electricity demand**       | Sum of AV and base electricity needs                       |
+| **Installed renewable capacity**   | Stock showing renewable infrastructure                     |
+| **Addition & decommission rates**  | Inflows/outflows based on investment and plant lifespan    |
+| **Renewable supply gap**           | Gap between electricity demand and renewable capacity      |
 
----
+
 
 ### 3.  Lithium Resource Dynamics
 
 | Component               | Role                                                          |
 |-------------------------|---------------------------------------------------------------|
-| `Annual lithium demand` | Driven by number of AVs × lithium per battery                 |
-| `Global lithium supply` | Input to simulate market limitation                           |
-| `Shortage ratio`        | Demand-to-supply ratio affecting future AV adoption           |
+| **Annual lithium demand** | Driven by number of AVs × lithium per battery                 |
+| **Global lithium supply** | Input to simulate market limitation                           |
+| **Shortage ratio**        | Demand-to-supply ratio affecting future AV adoption           |
 
----
+
 
 ##  Feedback Loops
 
@@ -113,5 +113,4 @@ The model lets you explore scenarios such as:
 | Grid capacity stress     | Evaluate impact on peak demand and blackout probabilities            |
 | Real-time dashboard      | Build Power BI dashboard to visualize simulation outcomes            |
 
----
 
