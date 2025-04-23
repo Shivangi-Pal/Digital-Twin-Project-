@@ -1,0 +1,304 @@
+{UTF-8}
+Total Vehicle market share=
+	6e+08/(1+0.7*EXP(-0.03*Simulation time))
+	~	Vehicles/Year
+	~		|
+
+Adoption saturation=
+	1-EXP(-0.1*AV market share)
+	~	
+	~		|
+
+Annual Lithium demand=
+	AV adoption rate*lithium per battry
+	~	Kg/Year
+	~		|
+
+AV adoption rate=
+	AV market share*Total Vehicle market share*(1-market resistance)
+	~	Vehicles/Year
+	~		|
+
+AV attractivness factor=
+	(AV technology advancement rate+Charging infrastructure sufficiency+Government Incentive\
+		)/3
+	~	
+	~		|
+
+AV market share=
+	MIN(0.8, 0.05 + (Simulation time/10) * (AV attractivness factor/10))
+	~	
+	~		|
+
+AV technology advancement rate=
+	0.2
+	~	
+	~		|
+
+Renewable plant lifespan=
+	15
+	~	Year
+	~		|
+
+Renewable supply gap=
+	MAX(0,Total Electricity demand-Installed renewable capacity)
+	~	
+	~		|
+
+shortage ratio=
+	(MAX(0,global lithium supply-Annual Lithium demand))/global lithium supply
+	~	
+	~		|
+
+Charging infrastructure sufficiency=
+	7
+	~	
+	~		|
+
+Effect of AV on investment=
+	0.05+0.25*(Renewable supply gap/(0.1*Installed renewable capacity))
+	~	MWh/Year
+	~		|
+
+original incentive=
+	7
+	~	
+	~		|
+
+global lithium supply=
+	500000
+	~	Kg/Year
+	~		|
+
+Government Incentive=
+	MAX(10,original incentive*(1-0.8*shortage1))
+	~	
+	~		|
+
+shortage1=
+	DELAY FIXED( shortage ratio ,1, 0 )
+	~	
+	~		|
+
+lithium per battry=
+	50
+	~	Kg/Vehicles
+	~		|
+
+market resistance=
+	0.2+0.8*(1-Adoption saturation)
+	~	
+	~		|
+
+AV retirenment rate=
+	No of Av's/AVG lifespan
+	~	Vehicles/Year
+	~		|
+
+AVG energy consumtion=
+	4
+	~	MWh/Vehicles
+	~		|
+
+AVG lifespan=
+	15
+	~	Year
+	~		|
+
+Base Renewable Growth Rate=
+	0.14*2.44e+08
+	~	MWh/Year
+	~		|
+
+Electricity Demand from AV=
+	No of Av's*AVG energy consumtion
+	~	MWh/Year
+	~		|
+
+Installed renewable capacity= INTEG (
+	Renewable capacity addition rate-Renewable capacity decomission rate,
+		2.44e+08)
+	~	MWh
+	~		|
+
+No of Av's= INTEG (
+	AV adoption rate-AV retirenment rate,
+		4.57e+06)
+	~	Vehicles
+	~		|
+
+Renewable capacity addition rate=
+	Base Renewable Growth Rate*(1+Effect of AV on investment)
+	~	MWh/Year
+	~		|
+
+Renewable capacity decomission rate=
+	Installed renewable capacity/Renewable plant lifespan
+	~	MWh/Year
+	~		|
+
+Simulation time= INTEG (
+	time increment,
+		0)
+	~	Year
+	~		|
+
+time increment=
+	1
+	~	Year
+	~		|
+
+Total Electricity demand= INTEG (
+	Electricity Demand from AV,
+		0)
+	~	MWh
+	~		|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Parameters
+	|
+
+FINAL TIME  = 100
+	~	Year
+	~	The final time for the simulation.
+	|
+
+INITIAL TIME  = 0
+	~	Year
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 
+        TIME STEP
+	~	Year [0,?]
+	~	The frequency with which output is stored.
+	|
+
+TIME STEP  = 1
+	~	Year [0,?]
+	~	The time step for the simulation.
+	|
+
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 1
+$-1--1--1,0,|12||-1--1--1|-1--1--1|-1--1--1|-1--1--1|-1--1--1|96,96,82,2
+10,1,No of Av's,1050,633,45,22,3,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,2,48,1046,401,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,3,5,2,100,0,0,22,0,192,0,-1--1--1,,1|(1046,457)|
+1,4,5,1,4,0,0,22,0,192,0,-1--1--1,,1|(1046,566)|
+11,5,0,1046,513,7,8,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,6,AV adoption rate,1110,513,57,29,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,7,48,1045,869,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,8,10,1,100,0,0,22,0,192,0,-1--1--1,,1|(1045,703)|
+1,9,10,7,4,0,0,22,0,192,0,-1--1--1,,1|(1045,812)|
+11,10,0,1045,757,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,11,AV retirenment rate,1124,757,71,29,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,12,AVG lifespan,811,773,59,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,13,12,10,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+1,14,1,10,1,0,0,0,0,192,0,-1--1--1,,1|(1164,716)|
+10,15,AV market share,838,480,49,29,8,3,0,0,-1,1,0,0,0,0,0,0,0,0
+10,16,Total Vehicle market share,827,561,63,29,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,17,15,5,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+1,18,16,5,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+10,19,Total Electricity demand,1602,613,70,29,3,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,20,48,1595,442,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,21,23,20,100,0,0,22,0,192,0,-1--1--1,,1|(1595,480)|
+1,22,23,19,4,0,0,22,0,192,0,-1--1--1,,1|(1595,553)|
+11,23,0,1595,517,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,24,Electricity Demand from AV,1690,517,87,29,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,25,1,23,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+10,26,AVG energy consumtion,1444,450,55,29,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,27,26,23,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+10,28,Government Incentive,673,146,59,29,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,29,AV technology advancement rate,645,258,85,29,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,30,Charging infrastructure sufficiency,861,128,65,43,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,31,AV attractivness factor,847,248,74,29,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,32,29,31,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+1,33,30,31,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+1,34,31,15,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+10,35,Simulation time,647,432,50,29,3,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,36,48,296,437,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,37,39,36,100,0,0,22,0,192,0,-1--1--1,,1|(358,437)|
+1,38,39,35,4,0,0,22,0,192,0,-1--1--1,,1|(509,437)|
+11,39,0,416,437,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,40,time increment,416,474,49,29,40,3,0,0,-1,1,0,0,0,0,0,0,0,0
+10,41,Installed renewable capacity,1804,872,50,43,3,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,42,48,1527,869,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,43,45,42,100,0,0,22,0,192,0,-1--1--1,,1|(1588,869)|
+1,44,45,41,4,0,0,22,0,192,0,-1--1--1,,1|(1702,869)|
+11,45,0,1645,869,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,46,Renewable capacity addition rate,1645,920,79,43,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,47,Effect of AV on investment,1470,729,66,29,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,48,Base Renewable Growth Rate,1671,715,76,29,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,49,47,45,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+1,50,48,45,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+12,51,48,2065,872,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,52,54,41,100,0,0,22,0,192,0,-1--1--1,,1|(1901,872)|
+1,53,54,51,4,0,0,22,0,192,0,-1--1--1,,1|(2007,872)|
+11,54,0,1954,872,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,55,Renewable capacity decomission rate,1954,923,79,43,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,56,Renewable plant lifespan,1930,1137,64,29,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,57,56,55,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+1,58,41,54,1,0,0,0,0,192,0,-1--1--1,,1|(1914,734)|
+1,59,35,15,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+10,60,Adoption saturation,1062,213,49,29,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,61,15,60,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+10,62,market resistance,1276,316,48,29,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,63,60,62,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+1,64,62,6,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+10,65,Renewable supply gap,1990,547,52,29,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,66,19,65,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+1,67,41,65,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+1,68,65,47,1,0,0,0,0,192,0,-1--1--1,,1|(1539,331)|
+1,69,41,47,1,0,0,0,0,192,0,-1--1--1,,1|(1350,958)|
+10,70,Annual Lithium demand,407,729,71,29,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,71,global lithium supply,83,594,64,29,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,72,shortage ratio,287,623,42,29,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,73,70,72,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+1,74,71,72,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+1,75,6,70,1,0,0,0,0,192,0,-1--1--1,,1|(1139,977)|
+10,76,original incentive,689,18,43,29,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,77,76,28,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+10,78,lithium per battry,217,759,52,29,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,79,78,70,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+1,80,28,31,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+10,81,shortage1,166,421,47,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,82,72,81,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+1,83,81,28,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+1,84,35,16,1,0,0,0,0,192,0,-1--1--1,,1|(602,735)|
+///---\\\
+:L<%^E!@
+4:Time
+5:Renewable capacity addition rate
+9:current
+19:82,0
+24:0
+25:100
+26:100
+23:0
+15:0,0,0,0,0,0
+27:0,
+34:0,
+42:0
+72:0
+73:0
+95:0
+96:0
+97:0
+77:0
+78:0
+102:1
+93:0
+94:0
+92:0
+91:0
+90:0
+87:0
+75:
+43:
+103:8,8,8,3,8
+105:0,0,0,0,0,0,0,0,0,0
+104:Vensim Sans|12||0-0-0|0-0-0|-1--1--1|0-0-255|192-192-192|-1--1--1
