@@ -30,11 +30,11 @@ The model is divided into three subsystems:
 Each component interacts with feedback loops and external drivers.
 
 ### 1. AV Adoption Subsystem
-Stock: No. of AVs
+#### Stock: No. of AVs
 
-Flows: AV adoption rate, AV retirement rate
+#### Flows: AV adoption rate, AV retirement rate
 
-Drivers:
+#### Drivers:
 
 AV attractiveness factor (affected by incentives, infrastructure, tech rate)
 
@@ -42,18 +42,18 @@ Market resistance
 
 Adoption saturation
 
-Key Output: AV market share over time
+#### Key Output: AV market share over time
 
 ### 2. Electricity Demand & Renewable Supply
-Stock: Installed renewable capacity
+#### Stock: Installed renewable capacity
 
-Flows:
+#### Flows:
 
 Renewable capacity addition rate
 
 Renewable decommission rate
 
-Calculated Outputs:
+#### Calculated Outputs:
 
 Electricity demand from AVs
 
@@ -61,20 +61,20 @@ Total electricity demand
 
 Renewable supply gap
 
-Levers:
+#### Levers:
 
 Effect of AVs on investment in renewables
 
 Base renewable growth rate
 
 ### 3. Lithium Resource Subsystem
-Computed Variables:
+#### Computed Variables:
 
 Annual lithium demand = AVs × lithium per battery
 
 Shortage ratio = Demand / Supply
 
-Impacts:
+#### Impacts:
 
 Lithium shortage can act as a braking feedback loop on AV production (optional modeling extension).
 
