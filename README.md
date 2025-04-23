@@ -17,13 +17,11 @@ This model addresses the question:
 
 ## GML Framework (Goals, Measures, Levers)
 
-Element        	Description
-
-Goals	          Assess long-term sustainability of AV adoption across energy and resource dimensions
-
-Measures      	No. of AVs, Electricity Demand, Installed Renewable Capacity, Lithium Shortage Ratio
-
-Levers        	Government Incentives, Charging Infrastructure, AV Tech Advancement Rate, Renewable Growth Rate
+| Element     | Description                                                                 |
+|-------------|-----------------------------------------------------------------------------|
+| **Goals**   | Assess long-term sustainability of AV adoption across energy and resources |
+| **Measures**| No. of AVs, Electricity Demand, Installed Renewable Capacity, Shortage Ratio |
+| **Levers**  | Government Incentives, Charging Infrastructure, Renewable Growth Rate       |
 
 ## Model Architecture
 The model is divided into three subsystems:
