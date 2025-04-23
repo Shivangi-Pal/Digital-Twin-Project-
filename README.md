@@ -1,4 +1,4 @@
-# 🚗🔋 Digital Twin Model: Evaluating the Sustainability of Autonomous Vehicle Adoption
+#  Digital Twin Model: Evaluating the Sustainability of Autonomous Vehicle Adoption
 
 This project presents a **system dynamics digital twin model** developed using **Vensim PLE** to analyze whether the increasing adoption of **Autonomous Vehicles (AVs)** is sustainable in terms of electricity consumption, renewable energy capacity, and lithium resource availability.
 
@@ -7,15 +7,15 @@ This project presents a **system dynamics digital twin model** developed using *
 ## 🎯 Problem Statement
 
 Autonomous Vehicles (AVs) are poised to revolutionize transportation. However, their rapid adoption raises sustainability concerns:
-- ⚡ Surging electricity demand
-- 🔋 Lithium shortages for batteries
-- 🌿 Increased pressure on renewable infrastructure
+-  Surging electricity demand
+-  Lithium shortages for batteries
+-  Increased pressure on renewable infrastructure
 
 > **Key Question**: *Is the mass adoption of AVs environmentally and infrastructurally sustainable over time?*
 
 ---
 
-## 🧠 GML Framework (Goals, Measures, Levers)
+##  GML Framework (Goals, Measures, Levers)
 
 | Element      | Description                                                                 |
 |--------------|-----------------------------------------------------------------------------|
@@ -25,9 +25,9 @@ Autonomous Vehicles (AVs) are poised to revolutionize transportation. However, t
 
 ---
 
-## 🧩 Model Subsystems
+##  Model Subsystems
 
-### 1. 🚘 AV Adoption Subsystem
+### 1.  AV Adoption Subsystem
 
 | Component            | Role                                                              |
 |----------------------|-------------------------------------------------------------------|
@@ -38,7 +38,7 @@ Autonomous Vehicles (AVs) are poised to revolutionize transportation. However, t
 
 ---
 
-### 2. ⚡ Electricity Demand & Renewable Capacity
+### 2.  Electricity Demand & Renewable Capacity
 
 | Component                         | Role                                                       |
 |----------------------------------|-------------------------------------------------------------|
@@ -50,7 +50,7 @@ Autonomous Vehicles (AVs) are poised to revolutionize transportation. However, t
 
 ---
 
-### 3. 🔋 Lithium Resource Dynamics
+### 3.  Lithium Resource Dynamics
 
 | Component               | Role                                                          |
 |-------------------------|---------------------------------------------------------------|
@@ -60,7 +60,7 @@ Autonomous Vehicles (AVs) are poised to revolutionize transportation. However, t
 
 ---
 
-## 🔁 Feedback Loops
+##  Feedback Loops
 
 | Loop Type       | Description                                                                 |
 |------------------|-----------------------------------------------------------------------------|
@@ -70,7 +70,7 @@ Autonomous Vehicles (AVs) are poised to revolutionize transportation. However, t
 
 ---
 
-## 📊 Simulation Insights
+##  Simulation Insights
 
 The model lets you explore scenarios such as:
 - How much **renewable energy growth** is needed to meet future electricity demand?
@@ -79,7 +79,7 @@ The model lets you explore scenarios such as:
 
 ---
 
-## 🛠 Tools Used
+##  Tools Used
 
 | Tool        | Purpose                             |
 |-------------|-------------------------------------|
@@ -89,7 +89,7 @@ The model lets you explore scenarios such as:
 
 ---
 
-## 📎 How to Use
+##  How to Use
 
 1. Open the `.mdl` file using **Vensim PLE**.
 2. Modify levers such as:
@@ -104,7 +104,7 @@ The model lets you explore scenarios such as:
 
 ---
 
-## 🚀 Future Extensions
+##  Future Extensions
 
 | Feature                  | Purpose                                                              |
 |--------------------------|----------------------------------------------------------------------|
@@ -115,10 +115,3 @@ The model lets you explore scenarios such as:
 
 ---
 
-## 📌 License
-
-This project is developed for academic purposes as part of a system modeling course at **VNIT Nagpur**.
-
----
-
-Let me know if you'd like help turning this into a live `README.md` file in your repo or if you want me to generate it as a downloadable file.
